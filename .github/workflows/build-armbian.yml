@@ -232,10 +232,10 @@ on:
         options:
           - ophub
           - angel
-          - yourname
+          - chautruongthinh
 
 env:
-  TZ: America/New_York
+  TZ: Asia/Ho_Chi_Minh
   ROOTFS_SCRIPT: compile-kernel/tools/script/armbian_rootfs.sh
 
 jobs:
@@ -305,7 +305,7 @@ jobs:
         run: |
           # Compile method and parameter description: https://docs.armbian.com/Developer-Guide_Build-Options
           cd build/
-              ./compile.sh RELEASE=${{ inputs.set_release }} BOARD=odroidn2 BRANCH=current BUILD_MINIMAL=no \
+              ./compile.sh RELEASE=${{ inputs.set_release }} BOARD=odroidn2 BRANCH=current BUILD_MINIMAL=yes \
                            BUILD_ONLY=default HOST=armbian BUILD_DESKTOP=no EXPERT=yes KERNEL_CONFIGURE=no \
                            COMPRESS_OUTPUTIMAGE="sha" SHARE_LOG=yes
           echo "status=success" >> ${GITHUB_OUTPUT}
